@@ -5,4 +5,6 @@ Agreguen sus nombres a la lista desde su branch y despues hagan un pull request:
 
 -Mauricio Morales
 
--Pedro Arsuaga
+-Pedro Arsuaga 
+
+(prueba ruleset 3 verificaciones)
