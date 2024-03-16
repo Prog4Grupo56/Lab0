@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#include <./DTFecha.h>
+#include "DTFecha.h"
 #ifndef INFORMACION
 #define INFORMACION
 

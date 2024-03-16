@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#include <./DTFecha.h>
+#include "DTFecha.h"
 
 // CPP de Fecha
 int DTFecha::getDia(){ return Dia; }

@@ -1,9 +1,9 @@
 #include <iostream>
 #include <vector>
-#include <./DTFecha.h>
-#include <./DTFecha.cpp>
-#include <./Informacion.h>
-#include <./Informacion.cpp>
+#include "DTFecha.cpp"
+#include "DTFecha.h"
+#include "Informacion.h"
+#include "Informacion.cpp"
     
     
 class Libro: public Informacion { // Clase Libro que extiende de Información
@@ -46,7 +46,7 @@ std::string Libro::toString() {
 
 int main() {
     
-    Fecha* PrimeraFecha = new Fecha(12, 03, 2024);
+    DTFecha* PrimeraFecha = new DTFecha(12, 03, 2024);
     
     std::vector<std::string> autores = {"Autor1", "Autor2", "Autor3"};
     
