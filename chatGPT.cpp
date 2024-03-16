@@ -1,7 +1,5 @@
 #include <iostream>
 #include "chatGPT.h"
-#include "Informacion.h"
-
 
 std::string chatGPT::toString(){
     std::string res = "chatGPT: ";
