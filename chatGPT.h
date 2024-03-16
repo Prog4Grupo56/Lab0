@@ -2,9 +2,9 @@
 #define CHATGPT
 
 #include <iostream>
+#include "Informacion.h"
 
-
-class chatGPT{
+class chatGPT : public Informacion{
     private:
         std::string Pregunta, Respuesta;
     public:

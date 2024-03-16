@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include "Informacion.h"
+#include "DTFecha.h"
 
 Informacion::Informacion( int id, DTFecha* _fecha ): identificador(id), fecha(_fecha) {}
 int Informacion::getIdentificador(){ return identificador; }
