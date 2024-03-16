@@ -3,7 +3,6 @@
 
 #include <iostream>
 
-
 class chatGPT{
     private:
         std::string Pregunta, Respuesta;
