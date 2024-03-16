@@ -18,4 +18,4 @@ class chatGPT : public Informacion{
         ~chatGPT(); // destructor
 };
 
-#endif CHATGPT
+#endif
