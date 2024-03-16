@@ -1,6 +1,5 @@
 #include <iostream>
 #include <vector>
-#include "chatGPT.h"
 
 class Fecha;
 class Informacion;
@@ -51,16 +50,22 @@ private:
     std::vector<std::string> autores;
     std::string resumen;
 public:
-    Libro(int id, Fecha* fecha, std::string titulo_, std::vector<std::string> autores_, std::string resumen_) 
+    // Constructor
+    Libro(int id, DTFecha* fecha, std::string titulo_, std::vector<std::string> autores_, std::string resumen_) 
         : Informacion(id, fecha), titulo(titulo_), autores(autores_), resumen(resumen_) {} // Constructor (un toque largo)
-    ~Libro() {} // Destructor
+    // Destructor
+    ~Libro() {} 
+    // Getters
+    std::string getTitulo(){ return titulo; }
+    std::vector<std::string> getAutores(){ return autores; }
+    std::string getResumen(){ return resumen; }
     std::string toString();
 };
 
 std::string Libro::toString() {
     std::string result = "Libro: ";
     result += std::to_string(getIdentificador()) + ", ";
-    result += std::to_string(getInfoDia()) + "/" + std::to_string(getInfoMes()) + "/" + std::to_string(getInfoAno()) + ", "; // Descomentar esta línea
+    result += std::to_string(getInformacionDia()) + "/" + std::to_string(getInformacionMes()) + "/" + std::to_string(getInformacionAno()) + ", "; // Descomentar esta línea
     result += titulo + ", ";
 
     result += "Autores: ";
