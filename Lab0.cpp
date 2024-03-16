@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include "chatGPT.h"
 
 class Fecha;
 class Informacion;
