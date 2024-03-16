@@ -14,4 +14,4 @@ class DTFecha {
         ~DTFecha(); // destructor
 };
 
-#endif DTFECHA
+#endif

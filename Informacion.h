@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#include <./DTFecha.h>
+#include "DTFecha.h"
 #ifndef INFORMACION
 #define INFORMACION
 
@@ -22,4 +22,4 @@ public:
     void setDTFecha( DTFecha* _DTFecha );
 };
 
-#endif INFORMACION
+#endif
