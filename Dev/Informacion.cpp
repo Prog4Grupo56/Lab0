@@ -11,3 +11,6 @@ void Informacion::setIdentificador(int _identificador) { identificador = _identi
 void Informacion::setDTFecha( DTFecha* _fecha ) { fecha = _fecha; }
 // Metodos
 std::string Informacion::getStringFecha(){ return fecha->toString(); }
+
+//push_back hace una copia de e, no se si esta bien asi o habria que pasarlo por referencia
+//void Informacion::asociarEstudiante(Estudiante e){estudiantes.push_back(e);} 
