@@ -9,17 +9,19 @@ private:
     int identificador;
     DTFecha* fecha;
 public:
+    // Constructor
     Informacion(int id, DTFecha* _fecha);
+    // Destructor
+    ~Informacion();
     // Metodos
     virtual std::string toString() { return ""; }
     // Getters
     int getIdentificador();
-    int getInformacionDia();
-    int getInformacionMes();
-    int getInformacionAno();
     // Setters
     void setIdentificador(int _identificador);
     void setDTFecha( DTFecha* _DTFecha );
+    // Metodos
+    std::string getStringFecha();
 };
 
 #endif

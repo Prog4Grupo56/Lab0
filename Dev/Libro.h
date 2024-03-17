@@ -17,7 +17,10 @@ public:
     std::string getTitulo();
     std::vector<std::string> getAutores();
     std::string getResumen();
+    // Metodos
     std::string toString();
+    // Sobrecarga de <<
+    friend std::ostream& operator<<(std::ostream& os, Libro* libro);
 };
 
 #endif
