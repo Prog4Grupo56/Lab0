@@ -22,4 +22,4 @@ public:
     void setDTFecha( DTFecha* _DTFecha );
 };
 
-#endif INFORMACION
+#endif
