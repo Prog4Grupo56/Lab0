@@ -9,11 +9,13 @@ private:
     int identificador;
     DTFecha* fecha;
 public:
-    // Constructor
+    // Constructor por defecto
+    Informacion();
+    // Constructor por parámetros
     Informacion(int id, DTFecha* _fecha);
     // Destructor
     ~Informacion();
-    // Metodos
+    // OPERACIONES
     virtual std::string toString() { return ""; }
     // Getters
     int getIdentificador();

@@ -1,6 +1,7 @@
 #include "Informacion.h"
 
-// Constructor
+Informacion::Informacion(){identificador = -1; fecha = NULL;}
+// Constructor por parámetros
 Informacion::Informacion( int id, DTFecha* _fecha ): identificador(id), fecha(_fecha) {}
 // Destructor
 Informacion::~Informacion(){}
