@@ -6,26 +6,26 @@
 
 class PaginaWeb: public Informacion {
     private:
-        std::string titulo;
-        std::string url;
-        std::string textoDeInteres;
+        string titulo;
+        string url;
+        string textoDeInteres;
     public:
     // Constructor
-    PaginaWeb(int _id, DTFecha* _fecha, std::string _titulo, std::string _url, std::string _textoDeInteres);
+    PaginaWeb(int _id, DTFecha* _fecha, string _titulo, string _url, string _textoDeInteres);
     // Destructor
     ~PaginaWeb();
     // Getters
-    std::string getTitulo();
-    std::string getUrl();
-    std::string getTextoDeInteres();
+    string getTitulo();
+    string getUrl();
+    string getTextoDeInteres();
     // Setters
-    void setTitulo(std::string _titulo);
-    void setUrl(std::string _url);
-    void setTextoDeInteres(std::string _textoDeInteres);
+    void setTitulo(string _titulo);
+    void setUrl(string _url);
+    void setTextoDeInteres(string _textoDeInteres);
     // Metodos
-    std::string toString();
+    string toString();
     // Sobrecarga de <<
-    friend std::ostream& operator<<(std::ostream& os, PaginaWeb* paginaWeb);
+    friend ostream& operator<<(ostream& os, PaginaWeb* paginaWeb);
 
 };
 

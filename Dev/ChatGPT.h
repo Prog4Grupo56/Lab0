@@ -5,15 +5,15 @@
 
 class ChatGPT : public Informacion{
     private:
-        std::string Pregunta, Respuesta;
+        string Pregunta, Respuesta;
     public:
         ChatGPT(); // constructor por defecto
-        ChatGPT(std::string pregunta, std::string respuesta); // constructor por parámetros
-        std::string getPregunta();
-        std::string getRespuesta();
-        void setPregunta(std::string pregunta);
-        void setRespuesta(std::string respuesta);
-        std::string toString();
+        ChatGPT(string pregunta, string respuesta, int id, DTFecha* fecha); // constructor por parámetros
+        string getPregunta();
+        string getRespuesta();
+        void setPregunta(string pregunta);
+        void setRespuesta(string respuesta);
+        string toString();
         ~ChatGPT(); // destructor
 };
 

@@ -1,13 +1,13 @@
 #include "ChatGPT.h"
 
 //constructor defecto
-ChatGPT::ChatGPT(){
+ChatGPT::ChatGPT():Informacion(){
     Pregunta =  "";
     Respuesta = "";
 }
 
 //constructor por parámetros
-ChatGPT::ChatGPT(std::string pregunta, std::string respuesta){
+ChatGPT::ChatGPT(string pregunta, string respuesta, int id, DTFecha* fecha):Informacion(id, fecha){
     Pregunta = pregunta;
     Respuesta = respuesta;
 }
@@ -15,24 +15,24 @@ ChatGPT::ChatGPT(std::string pregunta, std::string respuesta){
 //destructor
 ChatGPT::~ChatGPT(){}
 
-std::string ChatGPT::getPregunta(){
+string ChatGPT::getPregunta(){
     return Pregunta;
 }
 
-std::string ChatGPT::getRespuesta(){
+string ChatGPT::getRespuesta(){
     return Respuesta;
 }
 
-void ChatGPT::setPregunta (std::string pregunta){
+void ChatGPT::setPregunta (string pregunta){
     Pregunta = pregunta;
 }
 
-void ChatGPT::setRespuesta (std::string respuesta){
+void ChatGPT::setRespuesta (string respuesta){
     Respuesta = respuesta;
 }
 
-std::string ChatGPT::toString(){
-    std::string res = "chatGPT: ";
+string ChatGPT::toString(){
+    string res = "chatGPT: ";
     res += getIdentificador() + ", ";
     res += getStringFecha() + ", ";
     res += Pregunta + Respuesta;

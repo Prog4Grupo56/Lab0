@@ -3,24 +3,25 @@
 #include "Informacion.h"
 #ifndef LIBRO
 #define LIBRO
+
 class Libro: public Informacion { // Clase Libro que extiende de Información
 private:
-    std::string titulo;
-    std::vector<std::string> autores;
-    std::string resumen;
+    string titulo;
+    vector<string> autores;
+    string resumen;
 public:
     // Constructor
-    Libro(int id, DTFecha* fecha, std::string titulo_, std::vector<std::string> autores_, std::string resumen_);
+    Libro(int id, DTFecha* fecha, string titulo_, vector<string> autores_, string resumen_);
     // Destructor
     ~Libro();
     // Getters
-    std::string getTitulo();
-    std::vector<std::string> getAutores();
-    std::string getResumen();
+    string getTitulo();
+    vector<string> getAutores();
+    string getResumen();
     // Metodos
-    std::string toString();
+    string toString();
     // Sobrecarga de <<
-    friend std::ostream& operator<<(std::ostream& os, Libro* libro);
+    friend ostream& operator<<(ostream& os, Libro* libro);
 };
 
 #endif
