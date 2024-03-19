@@ -1,4 +1,4 @@
-#include "Informacion.h"
+#include "../include/Informacion.h"
 
 Informacion::Informacion(){identificador = -1; fecha = NULL;}
 // Constructor por parámetros
@@ -11,4 +11,4 @@ int Informacion::getIdentificador(){ return identificador; }
 void Informacion::setIdentificador(int _identificador) { identificador = _identificador; }
 void Informacion::setDTFecha( DTFecha* _fecha ) { fecha = _fecha; }
 // Metodos
-std::string Informacion::getStringFecha(){ return fecha->toString(); }
+string Informacion::getStringFecha(){ return fecha->toString(); }

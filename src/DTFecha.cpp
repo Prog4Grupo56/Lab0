@@ -1,5 +1,4 @@
-#include "DTFecha.h"
-
+#include "../include/DTFecha.h"
 // CPP de Fecha
 
 // Constructor por defecto
@@ -13,6 +12,6 @@ int DTFecha::getDia(){ return dia; }
 int DTFecha::getMes(){ return mes; }
 int DTFecha::getAno(){ return ano; }
 // Metodos
-std::string DTFecha::toString(){
-    return std::to_string(dia) + "/" + std::to_string(mes) + "/" + std::to_string(ano);
+string DTFecha::toString(){
+    return to_string(dia) + "/" + to_string(mes) + "/" + to_string(ano);
 }
