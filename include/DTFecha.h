@@ -1,6 +1,7 @@
 #include <iostream>
 #ifndef DTFECHA
 #define DTFECHA
+using namespace std;
 
 class DTFecha {
     private:
@@ -19,7 +20,7 @@ class DTFecha {
         // Setters
         DTFecha setFecha(int dia, int mes, int ano);
         // Metodos
-        std::string toString();
+        string toString();
 };
 
 #endif

@@ -8,7 +8,6 @@ class Informacion { // Clase Información
 private:
     int identificador;
     DTFecha* fecha;
-    //Vector<Estudiante> estudiantes
 public:
     // Constructor por defecto
     Informacion();
@@ -25,7 +24,6 @@ public:
     void setDTFecha( DTFecha* _DTFecha );
     // Metodos
     std::string getStringFecha();
-    //void asociarEstudiante(Estusiante e);
 };
 
 #endif
