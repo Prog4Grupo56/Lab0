@@ -1,4 +1,4 @@
-#include "ChatGPT.h"
+#include "../include/ChatGPT.h"
 
 //constructor defecto
 ChatGPT::ChatGPT():Informacion(){

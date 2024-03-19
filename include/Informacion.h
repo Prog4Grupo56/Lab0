@@ -15,7 +15,7 @@ public:
     // Constructor por parámetros
     Informacion(int id, DTFecha* _fecha);
     // Destructor
-    ~Informacion();
+    virtual ~Informacion();
     // OPERACIONES
     virtual string toString() { return ""; }
     // Getters
