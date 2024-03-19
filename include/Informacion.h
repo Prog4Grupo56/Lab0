@@ -8,14 +8,12 @@ private:
     int identificador;
     DTFecha* fecha;
 public:
-    // Constructor por defecto
-    Informacion();
-    // Constructor por parámetros
+    // Constructor
     Informacion(int id, DTFecha* _fecha);
     // Destructor
     virtual ~Informacion();
     // OPERACIONES
-    virtual string toString() { return ""; }
+    virtual string toString() = 0; // Asi se define un atributo puramente virtual
     // Getters
     int getIdentificador();
     // Setters
