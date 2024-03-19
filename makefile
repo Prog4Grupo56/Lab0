@@ -1,48 +1,39 @@
 TARGET  = Lab0
-DEV_DIR = ./include
-#OBJ_DIR = .
-OBJ     = Lab0.o ChatGPT.o DTFecha.o Informacion.o Libro.o PaginaWeb.o   
-#Estudiante.o
+SRC_DIR = ./src
+INC_DIR = ./include
+OBJ_DIR = ./obj
+OBJ     =  Lab0.o ChatGPT.o DTFecha.o Informacion.o Libro.o PaginaWeb.o   
 CFLAGS  = -Wall 
 
 #CREA EL EJECUTABLE
-$(TARGET): $(OBJ)
-	g++ $(CFLAGS) $(OBJ) -o $(TARGET)
-#ERROR: No puede crear el ejecutable con todos los .o, para arreglar
-
-#TEST:
-#$(TARGET): Lab0.o
-#	g++ Lab0.o -o $(TARGET)
-#Logra crear un ejecutable con un .o solo
+$(TARGET): $(addprefix $(OBJ_DIR)/, $(OBJ))
+	g++ $(CFLAGS) $^ -o $@
 
 #COMPILAR LOS ARCHIVOS CPP
-#Verificar si van los .h o .cpp para lab0.o
-Lab0.o: Lab0.cpp $(DEV_DIR)/DTFecha.h $(DEV_DIR)/Informacion.h $(DEV_DIR)/Libro.h $(DEV_DIR)/PaginaWeb.h $(DEV_DIR)/ChatGPT.h     #$(DEV_DIR)/DTFecha.cpp $(DEV_DIR)/Informacion.cpp $(DEV_DIR)/Libro.cpp $(DEV_DIR)/PaginaWeb.cpp $(DEV_DIR)/ChatGPT.cpp $(DEV_DIR)/Estudiante.h
-	g++ -c $(CFLAGS) Lab0.cpp
+$(OBJ_DIR)/Lab0.o: Lab0.cpp $(INC_DIR)/DTFecha.h $(INC_DIR)/Informacion.h $(INC_DIR)/Libro.h $(INC_DIR)/PaginaWeb.h $(INC_DIR)/ChatGPT.h
+	g++ -c $(CFLAGS) $< -o $@
 
-ChatGPT.o: $(DEV_DIR)/ChatGPT.cpp $(DEV_DIR)/ChatGPT.h
-	g++ -c $(CFLAGS) $(DEV_DIR)/ChatGPT.cpp
+$(OBJ_DIR)/ChatGPT.o: $(SRC_DIR)/ChatGPT.cpp $(INC_DIR)/ChatGPT.h
+	g++ -c $(CFLAGS) $< -o $@
 
-DTFecha.o: $(DEV_DIR)/DTFecha.cpp $(DEV_DIR)/DTFecha.h
-	g++ -c $(CFLAGS) $(DEV_DIR)/DTFecha.cpp
+$(OBJ_DIR)/DTFecha.o: $(SRC_DIR)/DTFecha.cpp $(INC_DIR)/DTFecha.h
+	g++ -c $(CFLAGS) $< -o $@
 
-Informacion.o: $(DEV_DIR)/Informacion.cpp $(DEV_DIR)/Informacion.h
-	g++ -c $(CFLAGS) $(DEV_DIR)/Informacion.cpp
+$(OBJ_DIR)/Informacion.o: $(SRC_DIR)/Informacion.cpp $(INC_DIR)/Informacion.h
+	g++ -c $(CFLAGS) $< -o $@
 
-Libro.o: $(DEV_DIR)/Libro.cpp $(DEV_DIR)/Libro.h
-	g++ -c $(CFLAGS) $(DEV_DIR)/Libro.cpp
+$(OBJ_DIR)/Libro.o: $(SRC_DIR)/Libro.cpp $(INC_DIR)/Libro.h
+	g++ -c $(CFLAGS) $< -o $@
 
-PaginaWeb.o: $(DEV_DIR)/PaginaWeb.cpp $(DEV_DIR)/PaginaWeb.h
-	g++ -c $(CFLAGS) $(DEV_DIR)/PaginaWeb.cpp
-
-#Estudiante.o: $(DEV_DIR)/Estudiante.h $(DEV_DIR)/Estudiante.cpp
-#	g++ -c $(DEV_DIR)/Estudiante.cpp
+$(OBJ_DIR)/PaginaWeb.o: $(SRC_DIR)/PaginaWeb.cpp $(INC_DIR)/PaginaWeb.h
+	g++ -c $(CFLAGS) $< -o $@
 
 #BORRA LOS .o Y EL EJECUTABLE SI EXISTEN
 .PHONY: clean
 clean:
-	rm -f *.o $(TARGET)
+	rm -f $(OBJ_DIR)/*.o $(TARGET)
 
-#FALTA:
-#Arreglar lo que se necesita para que compile el ejecutable final
-#Crear una carpeta obj donde vayan todos los .o automáticamente
+#EJECUTAR EL PROGRAMA
+.PHONY: run
+run: $(TARGET)
+	./$(TARGET)

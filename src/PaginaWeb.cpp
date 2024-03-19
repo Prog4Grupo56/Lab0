@@ -1,4 +1,4 @@
-#include "PaginaWeb.h"
+#include "../include/PaginaWeb.h"
 
 // Constructor
 PaginaWeb::PaginaWeb(int _id, DTFecha* _fecha, string _titulo, string _url, string _textoDeInteres) 

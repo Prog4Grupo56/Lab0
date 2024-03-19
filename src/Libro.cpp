@@ -1,4 +1,4 @@
-#include "Libro.h"
+#include "../include/Libro.h"
 
 // Constructor
 Libro::Libro(int id, DTFecha* fecha, string titulo_, vector<string> autores_, string resumen_) : Informacion(id, fecha), titulo(titulo_), autores(autores_), resumen(resumen_) {}
