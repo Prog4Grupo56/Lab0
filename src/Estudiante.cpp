@@ -1,8 +1,4 @@
-#include <iostream>
-using namespace std;
-
-#include <string>
-#include "Estudiante.h"
+#include "../include/Estudiante.h"
 
 Estudiante :: Estudiante(){
     Nombre = "";
@@ -33,5 +29,5 @@ string Estudiante :: toString(){
 }
 
 string listarInfo(DTFecha desde){
-
+    return "asd";
 };

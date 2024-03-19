@@ -2,7 +2,7 @@ TARGET  = Lab0
 SRC_DIR = ./src
 INC_DIR = ./include
 OBJ_DIR = ./obj
-OBJ     =  Lab0.o ChatGPT.o DTFecha.o Informacion.o Libro.o PaginaWeb.o   
+OBJ     = Lab0.o ChatGPT.o DTFecha.o Informacion.o Libro.o PaginaWeb.o Estudiante.o   # Agrega Estudiante.o a la lista de objetos
 CFLAGS  = -Wall 
 
 #CREA EL EJECUTABLE
@@ -26,6 +26,9 @@ $(OBJ_DIR)/Libro.o: $(SRC_DIR)/Libro.cpp $(INC_DIR)/Libro.h
 	g++ -c $(CFLAGS) $< -o $@
 
 $(OBJ_DIR)/PaginaWeb.o: $(SRC_DIR)/PaginaWeb.cpp $(INC_DIR)/PaginaWeb.h
+	g++ -c $(CFLAGS) $< -o $@
+
+$(OBJ_DIR)/Estudiante.o: $(SRC_DIR)/Estudiante.cpp $(INC_DIR)/Estudiante.h
 	g++ -c $(CFLAGS) $< -o $@
 
 #BORRA LOS .o Y EL EJECUTABLE SI EXISTEN
