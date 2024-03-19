@@ -13,7 +13,7 @@ public:
     // Constructor por parámetros
     Informacion(int id, DTFecha* _fecha);
     // Destructor
-    ~Informacion();
+    virtual ~Informacion();
     // OPERACIONES
     virtual std::string toString() { return ""; }
     // Getters
