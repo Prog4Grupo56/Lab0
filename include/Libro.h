@@ -1,5 +1,3 @@
-#include <iostream>
-#include <vector>
 #include "Informacion.h"
 #ifndef LIBRO
 #define LIBRO

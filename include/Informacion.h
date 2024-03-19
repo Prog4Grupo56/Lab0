@@ -1,9 +1,7 @@
-#include <iostream>
 #include <vector>
 #include "DTFecha.h"
 #ifndef INFORMACION
 #define INFORMACION
-using namespace std;
 
 class Informacion { // Clase Información 
 private:

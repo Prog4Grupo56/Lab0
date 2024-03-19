@@ -1,5 +1,4 @@
 #include "../include/Informacion.h"
-using namespace std;
 
 Informacion::Informacion(){identificador = -1; fecha = NULL;}
 // Constructor por parámetros

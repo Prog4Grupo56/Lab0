@@ -1,8 +1,6 @@
 #ifndef ESTUDIANTE
 #define ESTUDIANTE
-
-#include <iostream> 
-using namespace std;
+#include "DTFecha.h"
 
 class Estudiante
 {
