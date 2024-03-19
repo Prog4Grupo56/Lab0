@@ -1,10 +1,10 @@
 #include <iostream>
 #include <vector>
-#include "Dev/DTFecha.cpp"
-#include "Dev/Informacion.cpp"
-#include "Dev/Libro.cpp"
-#include "Dev/PaginaWeb.cpp"
-#include "Dev/ChatGPT.cpp"
+#include "include/Informacion.h"
+#include "include/ChatGPT.h"
+#include "include/DTFecha.h"
+#include "include/Libro.h"
+#include "include/PaginaWeb.h"
 
 int main() {
     

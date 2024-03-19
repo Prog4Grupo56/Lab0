@@ -3,6 +3,7 @@
 #include "DTFecha.h"
 #ifndef INFORMACION
 #define INFORMACION
+using namespace std;
 
 class Informacion { // Clase Información 
 private:
@@ -14,16 +15,16 @@ public:
     // Constructor por parámetros
     Informacion(int id, DTFecha* _fecha);
     // Destructor
-    ~Informacion();
+    virtual ~Informacion();
     // OPERACIONES
-    virtual std::string toString() { return ""; }
+    virtual string toString() { return ""; }
     // Getters
     int getIdentificador();
     // Setters
     void setIdentificador(int _identificador);
     void setDTFecha( DTFecha* _DTFecha );
     // Metodos
-    std::string getStringFecha();
+    string getStringFecha();
 };
 
 #endif
