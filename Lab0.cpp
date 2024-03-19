@@ -1,5 +1,3 @@
-#include <iostream>
-#include <vector>
 #include "include/Informacion.h"
 #include "include/ChatGPT.h"
 #include "include/DTFecha.h"
