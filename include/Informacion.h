@@ -1,4 +1,3 @@
-#include <iostream>
 #include <vector>
 #include "DTFecha.h"
 #ifndef INFORMACION

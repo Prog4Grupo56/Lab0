@@ -1,6 +1,5 @@
 #ifndef CHATGPT
 #define CHATGPT
-#include <iostream>
 #include "Informacion.h"
 
 class ChatGPT : public Informacion{
