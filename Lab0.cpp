@@ -8,21 +8,22 @@
 
 int main() {
     
+    // Creo fecha de prueba
     DTFecha* PrimeraFecha = new DTFecha(12, 03, 2024);
-    
+    // Creo autores de prueba
     std::vector<std::string> autores = {"Autor1", "Autor2", "Autor3"};
-    
+    // Creo Libro y PaginaWeb de prueba y los imprimo
     Libro* PrimerLibro = new Libro(01, PrimeraFecha, "Primer Libro", autores, "El Resumen");
-
     PaginaWeb* PrimeraPagina = new PaginaWeb(02, PrimeraFecha, "Titulo de Pagina", "pagina.com", "operadores");
-
     std::cout << PrimerLibro << std::endl;
-
     std::cout << PrimeraPagina << std::endl;
-
+    // Borro la memoria
     delete PrimerLibro;
     delete PrimeraPagina;
     delete PrimeraFecha;
+
+
+    // Inicio del Main
 
     bool Salir = false;
 

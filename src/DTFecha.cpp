@@ -1,4 +1,4 @@
-#include "DTFecha.h"
+#include "../include/DTFecha.h"
 // CPP de Fecha
 
 // Constructor por defecto
