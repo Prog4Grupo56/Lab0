@@ -1,5 +1,5 @@
 TARGET  = Lab0
-DEV_DIR = ./Dev
+DEV_DIR = ./include
 #OBJ_DIR = .
 OBJ     = Lab0.o ChatGPT.o DTFecha.o Informacion.o Libro.o PaginaWeb.o   
 #Estudiante.o
