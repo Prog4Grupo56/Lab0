@@ -1,7 +1,7 @@
 #include "../include/PaginaWeb.h"
 
 // Constructor
-PaginaWeb::PaginaWeb(int _id, DTFecha* _fecha, string _titulo, string _url, string _textoDeInteres) 
+PaginaWeb::PaginaWeb(int _id, DTFecha _fecha, string _titulo, string _url, string _textoDeInteres) 
 : Informacion(_id, _fecha), titulo(_titulo), url(_url), textoDeInteres(_textoDeInteres) {}
 // Destructor
 PaginaWeb::~PaginaWeb(){}
@@ -19,6 +19,6 @@ string PaginaWeb::toString(){
 }
 // Sobrecarga de <<
 ostream& operator<<(ostream& os, PaginaWeb* paginaWeb) {
-    os << paginaWeb->toString();
+    os << paginaWeb->toString() + "\n" + "\n";
     return os;
 }

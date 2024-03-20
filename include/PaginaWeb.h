@@ -9,7 +9,7 @@ class PaginaWeb: public Informacion {
         string textoDeInteres;
     public:
     // Constructor
-    PaginaWeb(int _id, DTFecha* _fecha, string _titulo, string _url, string _textoDeInteres);
+    PaginaWeb(int _id, DTFecha _fecha, string _titulo, string _url, string _textoDeInteres);
     // Destructor
     ~PaginaWeb();
     // Getters

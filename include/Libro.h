@@ -9,7 +9,7 @@ private:
     string resumen;
 public:
     // Constructor
-    Libro(int id, DTFecha* fecha, string titulo_, vector<string> autores_, string resumen_);
+    Libro(int id, DTFecha fecha, string titulo_, vector<string> autores_, string resumen_);
     // Destructor
     ~Libro();
     // Getters

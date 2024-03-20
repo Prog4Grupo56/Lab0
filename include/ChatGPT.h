@@ -7,7 +7,7 @@ class ChatGPT : public Informacion{
         string pregunta, respuesta;
     public:
         // Constructor
-        ChatGPT(int _id, DTFecha* _fecha, string _pregunta, string _respuesta);
+        ChatGPT(int _id, DTFecha _fecha, string _pregunta, string _respuesta);
         // Destructor
         ~ChatGPT();
         // Getters

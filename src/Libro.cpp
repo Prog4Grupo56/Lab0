@@ -1,7 +1,7 @@
 #include "../include/Libro.h"
 
 // Constructor
-Libro::Libro(int id, DTFecha* fecha, string titulo_, vector<string> autores_, string resumen_) : Informacion(id, fecha), titulo(titulo_), autores(autores_), resumen(resumen_) {}
+Libro::Libro(int id, DTFecha fecha, string titulo_, vector<string> autores_, string resumen_) : Informacion(id, fecha), titulo(titulo_), autores(autores_), resumen(resumen_) {}
 // Destructor
 Libro::~Libro(){}
 // Getters
@@ -25,7 +25,7 @@ string Libro::toString() {
 }
 // Sobrecarga de <<
 ostream& operator<<(ostream& os, Libro* libro) {
-    os << libro->toString(); // Eliminamos la flecha adicional
+    os << libro->toString() + "\n" + "\n"; // Eliminamos la flecha adicional
     return os;
 }
 

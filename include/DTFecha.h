@@ -20,7 +20,7 @@ class DTFecha {
         // Metodos
         string toString();
 
-        friend bool operator<(DTFecha& f1, DTFecha& f2);
+        friend bool operator<(DTFecha f1, DTFecha f2);
 };
 
 #endif
