@@ -34,7 +34,7 @@ set<string> Estudiante::listarInfo(string desde){
     for (long long unsigned int i = 0; i < listaInformacion.size(); i++)
     {
         if (fechaAux < listaInformacion[i]->getFecha()){
-            //cout << listaInformacion[i]->toString();
+            cout << listaInformacion[i]->toString() + "\n\n";
             resultado.insert(listaInformacion[i]->toString());
         }
     }
