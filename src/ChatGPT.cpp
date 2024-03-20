@@ -1,40 +1,21 @@
 #include "../include/ChatGPT.h"
 
-//constructor defecto
-ChatGPT::ChatGPT():Informacion(){
-    Pregunta =  "";
-    Respuesta = "";
-}
-
-//constructor por parámetros
-ChatGPT::ChatGPT(string pregunta, string respuesta, int id, DTFecha* fecha):Informacion(id, fecha){
-    Pregunta = pregunta;
-    Respuesta = respuesta;
-}
-
-//destructor
+// Constructor
+ChatGPT::ChatGPT(int _id, DTFecha* _fecha, string _pregunta, string _respuesta): Informacion(_id, _fecha), pregunta(_pregunta), respuesta(_respuesta) { }
+// Destructor
 ChatGPT::~ChatGPT(){}
-
-string ChatGPT::getPregunta(){
-    return Pregunta;
-}
-
-string ChatGPT::getRespuesta(){
-    return Respuesta;
-}
-
-void ChatGPT::setPregunta (string pregunta){
-    Pregunta = pregunta;
-}
-
-void ChatGPT::setRespuesta (string respuesta){
-    Respuesta = respuesta;
-}
-
+// Getters
+string ChatGPT::getPregunta(){ return pregunta; }
+string ChatGPT::getRespuesta(){ return respuesta; }
+// Setters
+void ChatGPT::setPregunta (string _pregunta){ pregunta = _pregunta; }
+void ChatGPT::setRespuesta (string _respuesta){ respuesta = _respuesta; }
+// Metodos
 string ChatGPT::toString(){
-    string res = "chatGPT: ";
-    res += getIdentificador() + ", ";
-    res += getStringFecha() + ", ";
-    res += Pregunta + Respuesta;
-    return res;
+    return to_string(getIdentificador()) + ", " + getStringFecha() + ", " + pregunta + ", " + respuesta;
 };
+// Sobrecarga de <<
+ostream& operator<<(ostream& os, ChatGPT* chat) {
+    os << chat->toString(); // Eliminamos la flecha adicional
+    return os;
+}

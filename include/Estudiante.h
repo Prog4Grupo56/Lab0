@@ -5,24 +5,27 @@
 class Estudiante
 {
 private:
-    string Nombre;
+    string nombre;
     int CI;
-    string Email;
+    string email;
 public:
-    Estudiante();
-    Estudiante(string nombre, int CI, string Email);
-
+    // Constructor
+    Estudiante(string _nombre, int _CI, string _email);
+    // Destructor
+    ~Estudiante();
+    // Getters
     string getNombre();
-    void setNombre(string nombre);
     int getCI();
-    void setCI(int CI);
     string getEmail();
-    void setEmail(string Email);
-
+    // Setters
+    void setNombre(string _nombre);
+    void setCI(int _CI);
+    void setEmail(string e_mail);
+    // Metodos
     string toString();
     string listarInfo();
-
-    ~Estudiante();
+    // Sobrecarga de <<
+    friend ostream& operator<<(ostream& os, Estudiante* estudiante);
 };
 
 #endif

@@ -1,8 +1,7 @@
 #include "../include/Informacion.h"
 using namespace std;
 
-Informacion::Informacion(){identificador = -1; fecha = NULL;}
-// Constructor por parámetros
+// Constructor
 Informacion::Informacion( int id, DTFecha* _fecha ): identificador(id), fecha(_fecha) {}
 // Destructor
 Informacion::~Informacion(){}
