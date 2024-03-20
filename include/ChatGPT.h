@@ -18,6 +18,8 @@ class ChatGPT : public Informacion{
         void setRespuesta(string _respuesta);
         // Metodos
         string toString(); 
+        // Sobrecarga de <<
+        friend ostream& operator<<(ostream& os, ChatGPT* chat);
 };
 
 #endif

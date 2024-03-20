@@ -10,8 +10,7 @@ vector<string> Libro::getAutores(){ return autores; }
 string Libro::getResumen(){ return resumen; }
 // Metodos
 string Libro::toString() {
-    string result = "Libro: ";
-    result += to_string(getIdentificador()) + ", ";
+    string result = to_string(getIdentificador()) + ", ";
     result += getStringFecha() + ", ";
     result += titulo + ", ";
     result += "Autores: ";
