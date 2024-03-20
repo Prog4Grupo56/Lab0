@@ -15,7 +15,7 @@ void PaginaWeb::setUrl(string _url){ url=_url; }
 void PaginaWeb::setTextoDeInteres(string _textoDeInteres){ textoDeInteres=_textoDeInteres; }
 // Metodos
 string PaginaWeb::toString(){
-    return "PáginaWeb: " + to_string(getIdentificador()) + ", " + getStringFecha() + ", " + getTitulo() + ", " + getUrl() + ", " + getTextoDeInteres();
+    return to_string(getIdentificador()) + ", " + getStringFecha() + ", " + getTitulo() + ", " + getUrl() + ", " + getTextoDeInteres();
 }
 // Sobrecarga de <<
 ostream& operator<<(ostream& os, PaginaWeb* paginaWeb) {
