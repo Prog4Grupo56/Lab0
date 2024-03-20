@@ -27,7 +27,7 @@ public:
     void setInfo(Informacion* informacion);
     // Metodos
     string toString();
-    string listarInfo();
+    set<Informacion> listarInfo(DTFecha* desde);
     // Sobrecarga de <<
     friend ostream& operator<<(ostream& os, Estudiante* estudiante);
     

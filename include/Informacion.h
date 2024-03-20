@@ -1,5 +1,7 @@
 #include <vector>
+#include "Estudiante.h"
 #include "DTFecha.h"
+
 #ifndef INFORMACION
 #define INFORMACION
 
@@ -7,6 +9,7 @@ class Informacion { // Clase Información
 private:
     int identificador;
     DTFecha* fecha;
+    vector<Estudiante> estudiantes;
 public:
     // Constructor
     Informacion(int id, DTFecha* _fecha);
