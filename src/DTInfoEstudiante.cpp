@@ -25,5 +25,5 @@ ostream& operator<<(ostream& os, DTInfoEstudiante* est){
 }
 
 DTInfoEstudiante :: ~DTInfoEstudiante(){
-
+    
 }

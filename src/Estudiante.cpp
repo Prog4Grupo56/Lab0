@@ -8,12 +8,12 @@ Estudiante::~Estudiante(){}
 string Estudiante::getNombre() {return nombre;}
 int Estudiante::getCI() {return  CI;}
 string Estudiante::getEmail() {return  email; }
-vector<Informacion*> Estudiante::getInfo(){ return informacion; }
+vector<Informacion> Estudiante::getInfo(){ return informacion; }
 // Setters
 void Estudiante::setCI(int _CI) { CI = _CI; }   
 void Estudiante::setNombre(string _nombre) { nombre = _nombre; }
 void Estudiante::setEmail(string _email) { email = _email; }
-void Estudiante::setInfo(Informacion* info){ informacion.push_back(info); }
+void Estudiante::setInfo(Informacion info){ informacion.push_back(info); }
 // Metodos
 string Estudiante::toString(){
     return nombre + ", " + to_string(CI) + ", " + email;  
