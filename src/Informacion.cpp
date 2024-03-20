@@ -6,7 +6,6 @@ Informacion::Informacion( int id, DTFecha* _fecha ): identificador(id), fecha(_f
 Informacion::~Informacion(){}
 // Getters
 int Informacion::getIdentificador(){ return identificador; }
-DTFecha* Informacion::getDTFecha( ) { return fecha; }
 // Setters
 void Informacion::setIdentificador(int _identificador) { identificador = _identificador; }
 void Informacion::setDTFecha( DTFecha* _fecha ) { fecha = _fecha; }
