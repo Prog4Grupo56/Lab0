@@ -4,6 +4,7 @@
 #include "include/Libro.h"
 #include "include/PaginaWeb.h"
 #include "include/Estudiante.h"
+#include "include/DTInfoEstudiante.h"
 
 int main() {
     
