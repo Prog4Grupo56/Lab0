@@ -9,7 +9,7 @@ private:
     string nombre;
     int CI;
     string email;
-    vector<Informacion*> informacion;
+    vector<Informacion*> listaInformacion;
 public:
     // Constructor
     Estudiante(string _nombre, int _CI, string _email);
@@ -27,7 +27,7 @@ public:
     void setInfo(Informacion* informacion);
     // Metodos
     string toString();
-    string listarInfo();
+    set<string> listarInfo(string desde);
     // Sobrecarga de <<
     friend ostream& operator<<(ostream& os, Estudiante* estudiante);
     

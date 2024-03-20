@@ -6,20 +6,20 @@
 class Informacion { // Clase Información 
 private:
     int identificador;
-    DTFecha* fecha;
+    DTFecha fecha;
 public:
     // Constructor
-    Informacion(int id, DTFecha* _fecha);
+    Informacion(int id, DTFecha _fecha);
     // Destructor
     virtual ~Informacion();
     // OPERACIONES
     virtual string toString() = 0; // Asi se define un atributo puramente virtual
     // Getters
     int getIdentificador();
-    DTFecha* getFecha();
+    DTFecha getFecha();
     // Setters
     void setIdentificador(int _identificador);
-    void setDTFecha( DTFecha* _DTFecha );
+    void setDTFecha( DTFecha _DTFecha );
     // Metodos
     string getStringFecha();
 };
