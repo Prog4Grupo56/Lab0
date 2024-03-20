@@ -1,39 +1,24 @@
 #include "../include/Estudiante.h"
 
-Estudiante :: Estudiante(){
-    Nombre = "";
-    CI = 0;
-    Email = "";
+// Constructor
+Estudiante::Estudiante(string _nombre, int _CI, string _email): nombre(_nombre), CI(_CI), email(_email) { }
+// Destructor
+Estudiante::~Estudiante(){}
+// Getters
+string Estudiante::getNombre() {return nombre;}
+int Estudiante::getCI() {return  CI;}
+string Estudiante::getEmail() {return  email; }
+vector<Informacion> Estudiante::getInfo(){ return informacion; }
+// Setters
+void Estudiante::setCI(int _CI) { CI = _CI; }   
+void Estudiante::setNombre(string _nombre) { nombre = _nombre; }
+void Estudiante::setEmail(string _email) { email = _email; }
+void Estudiante::setInfo(Informacion info){ informacion.push_back(info); }
+// Metodos
+string Estudiante::toString(){
+    return nombre + ", " + to_string(CI) + ", " + email;  
 }
-
-Estudiante :: Estudiante(string nombre, int ci, string email, vector<Informacion> info){
-    Nombre = nombre;
-    CI = ci;
-    Email = email;
-    informacion = info;
-}
-
-string Estudiante :: getNombre() {return Nombre;}
-void Estudiante :: setNombre(string nombre) {Nombre = nombre;}
-
-int Estudiante :: getCI() {return  CI;}
-void Estudiante :: setCI(int ci) {CI = ci;}   
-
-string Estudiante :: getEmail() {return  Email; }
-void Estudiante :: setEmail(string email) {Email = email;}
-
-vector<Informacion> Estudiante :: getInfo(){return informacion;}
-void Estudiante :: setInfo(Informacion info){informacion.push_back(info);}
-
-string Estudiante :: toString(){
-    string ss = "Nombre: "+ Nombre + "\n" +
-                "CI: "+ to_string(CI) + "\n" +  
-                "Email: "+ Email + "\n" ;
-    return ss;  
-}
-
-
-set<Informacion> Estudiante :: listarInfo(DTFecha* desde){
+set<Informacion> Estudiante::listarInfo(DTFecha* desde){
     set<Informacion> listaInfo;
     int i=0;
 
@@ -46,5 +31,8 @@ set<Informacion> Estudiante :: listarInfo(DTFecha* desde){
         }
     }
 };
-
-Estudiante :: ~Estudiante(){}
+// Sobrecarga de <<
+ostream& operator<<(ostream& os, Estudiante* estudiante) {
+    os << estudiante->toString(); // Eliminamos la flecha adicional
+    return os;
+}

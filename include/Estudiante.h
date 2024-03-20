@@ -1,35 +1,36 @@
 #ifndef ESTUDIANTE
 #define ESTUDIANTE
 
-#include <vector>
 #include <set>
 #include "Informacion.h"
-#include "DTFecha.h"
 
 class Estudiante
 {
 private:
-    string Nombre;
+    string nombre;
     int CI;
-    string Email;
+    string email;
     vector<Informacion> informacion;
 public:
-    Estudiante();
-    Estudiante(string nombre, int CI, string Email, vector<Informacion> info);
-
+    // Constructor
+    Estudiante(string _nombre, int _CI, string _email);
+    // Destructor
+    ~Estudiante();
+    // Getters
     string getNombre();
-    void setNombre(string nombre);
     int getCI();
-    void setCI(int CI);
     string getEmail();
-    void setEmail(string email);
     vector<Informacion> getInfo();
+    // Setters
+    void setNombre(string _nombre);
+    void setCI(int _CI);
+    void setEmail(string e_mail);
     void setInfo(Informacion informacion);
-
+    // Metodos
     string toString();
     set<Informacion> listarInfo(DTFecha* desde);
-
-    ~Estudiante();
+    // Sobrecarga de <<
+    friend ostream& operator<<(ostream& os, Estudiante* estudiante);
 };
 
 #endif

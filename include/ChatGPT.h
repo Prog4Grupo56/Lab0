@@ -4,16 +4,22 @@
 
 class ChatGPT : public Informacion{
     private:
-        string Pregunta, Respuesta;
+        string pregunta, respuesta;
     public:
-        ChatGPT(); // constructor por defecto
-        ChatGPT(string pregunta, string respuesta, int id, DTFecha* fecha); // constructor por parámetros
+        // Constructor
+        ChatGPT(int _id, DTFecha* _fecha, string _pregunta, string _respuesta);
+        // Destructor
+        ~ChatGPT();
+        // Getters
         string getPregunta();
         string getRespuesta();
-        void setPregunta(string pregunta);
-        void setRespuesta(string respuesta);
-        string toString();
-        ~ChatGPT(); // destructor
+        // Setters
+        void setPregunta(string _pregunta);
+        void setRespuesta(string _respuesta);
+        // Metodos
+        string toString(); 
+        // Sobrecarga de <<
+        friend ostream& operator<<(ostream& os, ChatGPT* chat);
 };
 
 #endif
