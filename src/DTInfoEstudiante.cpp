@@ -1,13 +1,12 @@
 #include <iostream>
 using namespace std;
 
-#include <string>
-#include "DTInfoEstudiante.h"
+#include "../include/DTInfoEstudiante.h"
 
 DTInfoEstudiante :: DTInfoEstudiante(){
     NombreEst = "";
     CI = 0;
-    idInfo = ""; 
+    idInfo = 0; 
 }
 
 DTInfoEstudiante :: DTInfoEstudiante(int ci, string nombre, int idinfo){
@@ -16,11 +15,15 @@ DTInfoEstudiante :: DTInfoEstudiante(int ci, string nombre, int idinfo){
     idInfo = idinfo;
 }
 
-string DTInfoEstudiante :: getNombre() {return Nombre;}
+string DTInfoEstudiante :: getNombre() {return NombreEst;}
 int DTInfoEstudiante :: getCI() {return  CI;}
-string DTInfoEstudiante :: getidInfo() {return  idInfo;}
+int DTInfoEstudiante :: getidInfo() {return  idInfo;}
 
-ostream& :: DTInfoEstudiante operator<<(ostream& os){
-    os << to_string(CI) + ", " + NombreEst + ", " + to_string(idInfo);
+ostream& operator<<(ostream& os, DTInfoEstudiante* est){
+    os << (to_string(est->CI) + ", " + est->NombreEst + ", " + to_string(est->idInfo));
     return os;
+}
+
+DTInfoEstudiante :: ~DTInfoEstudiante(){
+    
 }

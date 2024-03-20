@@ -3,13 +3,14 @@
 Estudiante :: Estudiante(){
     Nombre = "";
     CI = 0;
-    Email = ""; 
+    Email = "";
 }
 
-Estudiante :: Estudiante(string nombre, int ci, string email){
+Estudiante :: Estudiante(string nombre, int ci, string email, vector<Informacion> info){
     Nombre = nombre;
     CI = ci;
     Email = email;
+    informacion = info;
 }
 
 string Estudiante :: getNombre() {return Nombre;}
@@ -21,6 +22,9 @@ void Estudiante :: setCI(int ci) {CI = ci;}
 string Estudiante :: getEmail() {return  Email; }
 void Estudiante :: setEmail(string email) {Email = email;}
 
+vector<Informacion> Estudiante :: getInfo(){return informacion;}
+void Estudiante :: setInfo(Informacion info){informacion.push_back(info);}
+
 string Estudiante :: toString(){
     string ss = "Nombre: "+ Nombre + "\n" +
                 "CI: "+ to_string(CI) + "\n" +  
@@ -28,6 +32,19 @@ string Estudiante :: toString(){
     return ss;  
 }
 
-string listarInfo(DTFecha desde){
-    return "asd";
+
+set<Informacion> Estudiante :: listarInfo(DTFecha* desde){
+    set<Informacion> listaInfo;
+    int i=0;
+
+    if(!informacion.empty()){
+        for(int i=0; i<informacion.size(); i++){   
+            if ( desde < informacion[i].getDTFecha() ){     //fecha asoc. al est. es mayor (sobrecarga en <)
+                listaInfo.insert(informacion[i]);           //agrego al conjunto 
+            }
+            //si no, no hago nada
+        }
+    }
 };
+
+Estudiante :: ~Estudiante(){}
