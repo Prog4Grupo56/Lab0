@@ -3,7 +3,7 @@ SRC_DIR 	= ./src
 INC_DIR 	= ./include
 OBJ_DIR 	= ./obj
 OBJ__O_DIR 	= obj
-OBJ     	=  Lab0.o ChatGPT.o DTFecha.o Informacion.o Libro.o PaginaWeb.o Estudiante.o
+OBJ     	=  Lab0.o ChatGPT.o DTFecha.o Informacion.o Libro.o PaginaWeb.o Estudiante.o DTInfoEstudiante.o
 CFLAGS  	= -Wall 
 
 #CREA EL EJECUTABLE
@@ -11,7 +11,7 @@ $(TARGET): $(addprefix $(OBJ_DIR)/, $(OBJ))
 	g++ $(CFLAGS) $^ -o $@
 
 #COMPILAR LOS ARCHIVOS CPP
-$(OBJ_DIR)/Lab0.o: Lab0.cpp $(INC_DIR)/DTFecha.h $(INC_DIR)/Informacion.h $(INC_DIR)/Libro.h $(INC_DIR)/PaginaWeb.h $(INC_DIR)/ChatGPT.h $(INC_DIR)/Estudiante.h | ${OBJ__O_DIR}
+$(OBJ_DIR)/Lab0.o: Lab0.cpp $(INC_DIR)/DTFecha.h $(INC_DIR)/Informacion.h $(INC_DIR)/Libro.h $(INC_DIR)/PaginaWeb.h $(INC_DIR)/ChatGPT.h $(INC_DIR)/Estudiante.h $(INC_DIR)/DTInfoEstudiante.h | ${OBJ__O_DIR}
 	g++ -c $(CFLAGS) $< -o $@
 
 $(OBJ_DIR)/%.o : $(SRC_DIR)/%.cpp $(INC_DIR)/%.h | ${OBJ__O_DIR}

@@ -7,8 +7,6 @@ class DTFecha {
     private:
         int dia, mes, ano;
     public:
-        // Constructor por defecto
-        DTFecha();
         // Constructor
         DTFecha(int _dia, int _mes, int _ano);
         // Destructor
@@ -18,9 +16,11 @@ class DTFecha {
         int getMes();
         int getAno();
         // Setters
-        DTFecha setFecha(int dia, int mes, int ano);
+        void setFecha(int _dia, int _mes, int _ano);
         // Metodos
         string toString();
+
+        friend bool operator<(DTFecha& f1, DTFecha& f2);
 };
 
 #endif

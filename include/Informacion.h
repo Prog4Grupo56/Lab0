@@ -16,6 +16,7 @@ public:
     virtual string toString() = 0; // Asi se define un atributo puramente virtual
     // Getters
     int getIdentificador();
+    DTFecha* getFecha();
     // Setters
     void setIdentificador(int _identificador);
     void setDTFecha( DTFecha* _DTFecha );
