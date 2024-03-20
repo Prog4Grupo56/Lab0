@@ -21,6 +21,7 @@ class DTFecha {
         DTFecha setFecha(int dia, int mes, int ano);
         // Metodos
         string toString();
+        friend bool operator<(DTFecha& f1, DTFecha& f2);
 };
 
 #endif
