@@ -4,6 +4,7 @@
 #include "include/Libro.h"
 #include "include/PaginaWeb.h"
 #include "include/Estudiante.h"
+#include "include/DTInfoEstudiante.h"
 
 int main() {
     
@@ -36,28 +37,26 @@ int main() {
     try
     {
         // Aca va a estar nuestro codigo de main
-        while (!Salir)
+         vector<Informacion*> informacionVector;
+        cout << "\nPara salir escriba 0\n\n";
+        while (!Salir) 
         {
             string msg;
-            cout << "Seleccione una opción [ 0 | 1 ]\n";
-            cout << "\t1)Agregar Libro\n";
-            cout << "\t0)Salir\n";
+            
             cin >> msg ;
             if (msg=="0" || msg=="Salir" || msg=="salir"){
                 Salir=true;
             }
-            if (msg=="1"){
-
-                int Dia,Mes,Ano;
-                cout << "Ingrese Dia: ";
-                cin >> Dia;
-                cout << "Ingrese Mes: ";
-                cin >> Mes;
-                cout << "Ingrese Año: ";
-                cin >> Ano;
-                DTFecha* Fecha = new DTFecha(Dia, Mes, Ano);
-                cout << "\nFecha: " << Fecha->toString() << "\n\n";
-                delete Fecha;
+            if (msg.substr(0, 10) == "crearLibro"){
+                
+                vector<string> palabras;
+                int inicio = 0;
+                for (long long unsigned int i = 0; i < msg.length(); i++) {
+                    if (msg[i] == ' ' || msg[i] == '\0') {
+                        palabras.push_back(msg.substr(inicio, i - inicio)); 
+                        inicio = i + 1; 
+                    }
+                }
 
             }
         }
