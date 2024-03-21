@@ -6,12 +6,14 @@
 #include "include/PaginaWeb.h"
 #include "include/DTInfoEstudiante.h"
 
+// agregar funcion de parte h
+
 int main() {
     
     // Inicio del Main
 
     vector<Informacion*> conjuntoInformacion = {};
-    vector<Estudiante*> conjuntoEstudiante = {};
+    vector<Estudiante*> conjuntoEstudiante = {}; // Al hacer delete de un Informacion hay que mantener esta coleccion
 
     // a) 
     
@@ -24,6 +26,7 @@ int main() {
         "El objetivo de esta semana es contextualizar el paradigma de Orientación a Objetos (OO) en el marco de la Ingeniería de Software, así como comenzar a ver sus conceptos básicos y cómo éstos se implementan en C++."
     );
     conjuntoInformacion.push_back(PrimeraPaginaWeb);
+
     // Crear SegundaPaginaWeb
     PaginaWeb* SegundaPaginaWeb = new PaginaWeb(
         2, 
@@ -99,12 +102,12 @@ int main() {
 
     // g)
 
-    PrimerEstudiante->listarInfo("8/3/2024");
+    PrimerEstudiante->listarInfo("8/3/2024"); // DTFecha
     SegundoEstudiante->listarInfo("8/3/2024"); // Cambiar a que imprima el set aca en el main en vez de imprimir en Estudiante.cpp
 
     // h)
 
-    vector<DTInfoEstudiante*> resultado = {};
+    vector<DTInfoEstudiante*> resultado = {}; // que no sea puntero
 
     for (long long unsigned int i = 0; i < conjuntoInformacion.size(); i++)
     {
@@ -118,16 +121,22 @@ int main() {
             for (long long unsigned int j = 0; j < conjuntoInformacion[i]->getEstudiantes().size(); j++)
             {
                 resultado.push_back( new DTInfoEstudiante(conjuntoInformacion[i]->getEstudiantes()[j]->getCI(), conjuntoInformacion[i]->getEstudiantes()[j]->getNombre(), conjuntoInformacion[i]->getIdentificador()) ); 
-            }
+            } // sacar new
                         
         }
 
     }
 
+    // llamar funcion
+
     for (long long unsigned int i = 0; i < resultado.size(); i++)
     {
         cout << resultado[i] << "\n";
     }
+
+    // i)
+
+    delete PrimerChatGPT;
     
     return 0;
 
