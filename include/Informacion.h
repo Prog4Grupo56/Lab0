@@ -2,6 +2,7 @@
 #define INFORMACION
 #include <vector>
 #include "DTFecha.h"
+//#include "Estudiante.h"
 
 class Estudiante;
 
@@ -20,11 +21,11 @@ public:
     // Getters
     int getIdentificador();
     DTFecha getFecha();
-    vector<Estudiante*> getInfo();
+    vector<Estudiante*> getEstudiantes();
     // Setters
     void setIdentificador(int _identificador);
     void setDTFecha( DTFecha _DTFecha );
-    void setInfo(Estudiante* estudiante);
+    void setEstudiante(Estudiante* estudiante);
     // Metodos
     string getStringFecha();
 };
