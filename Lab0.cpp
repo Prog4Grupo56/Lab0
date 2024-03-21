@@ -5,13 +5,14 @@
 #include "include/Libro.h"
 #include "include/PaginaWeb.h"
 #include "include/DTInfoEstudiante.h"
+#include "include/Funciones.h"
 
 int main() {
     
     // Inicio del Main
 
-    vector<Informacion*> conjuntoInformacion = {};
-    vector<Estudiante*> conjuntoEstudiante = {};
+    vector<Informacion*> conjuntoInformacion ;
+    vector<Estudiante*> conjuntoEstudiante ;
 
     // a) 
     
@@ -99,12 +100,15 @@ int main() {
 
     // g)
 
-    PrimerEstudiante->listarInfo("8/3/2024");
-    SegundoEstudiante->listarInfo("8/3/2024"); // Cambiar a que imprima el set aca en el main en vez de imprimir en Estudiante.cpp
+    set<string> infoPrimerEstudiante = PrimerEstudiante->listarInfo(DTFecha(8,3,2024));
+    set<string> infoSegundoEstudiante = SegundoEstudiante->listarInfo(DTFecha(8,3,2024));
+
+    imprimirListaDesde(infoPrimerEstudiante);
+    imprimirListaDesde(infoSegundoEstudiante);
 
     // h)
 
-    vector<DTInfoEstudiante*> resultado = {};
+    vector<DTInfoEstudiante*> resultado;
 
     for (long long unsigned int i = 0; i < conjuntoInformacion.size(); i++)
     {
@@ -112,8 +116,6 @@ int main() {
         string aRevisar = conjuntoInformacion[i]->toString();
 
         if ( aRevisar.find("polimorfismo") != string::npos ){
-
-            // cout << conjuntoInformacion[i]->toString() + "\n\n";
 
             for (long long unsigned int j = 0; j < conjuntoInformacion[i]->getEstudiantes().size(); j++)
             {
