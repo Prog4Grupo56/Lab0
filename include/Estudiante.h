@@ -3,6 +3,8 @@
 #include "Informacion.h"
 #include <set>
 
+class Informacion;
+
 class Estudiante
 {
 private:
@@ -28,6 +30,7 @@ public:
     // Metodos
     string toString();
     set<string> listarInfo(DTFecha desde);
+    void eliminarInformacion(int identificador);
     // Sobrecarga de <<
     friend ostream& operator<<(ostream& os, Estudiante* estudiante);
     

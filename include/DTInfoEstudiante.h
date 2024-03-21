@@ -18,7 +18,7 @@ public:
     int getCI();
     int getidInfo();
 
-    friend ostream& operator<<(ostream& os,DTInfoEstudiante* est);
+    friend ostream& operator<<(ostream& os,DTInfoEstudiante est);
 
     ~DTInfoEstudiante();
 };

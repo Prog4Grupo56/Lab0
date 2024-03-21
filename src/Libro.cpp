@@ -23,9 +23,5 @@ string Libro::toString() {
     result += resumen;
     return result;
 }
-// Sobrecarga de <<
-ostream& operator<<(ostream& os, Libro* libro) {
-    os << libro->toString() + "\n" + "\n"; // Eliminamos la flecha adicional
-    return os;
-}
+
 
