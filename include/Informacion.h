@@ -2,7 +2,7 @@
 #define INFORMACION
 #include <vector>
 #include "DTFecha.h"
-//#include "Estudiante.h"
+#include "Estudiante.h"
 
 class Estudiante;
 

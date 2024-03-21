@@ -22,8 +22,6 @@ class PaginaWeb: public Informacion {
     void setTextoDeInteres(string _textoDeInteres);
     // Metodos
     string toString();
-    // Sobrecarga de <<
-    friend ostream& operator<<(ostream& os, PaginaWeb* paginaWeb);
 
 };
 

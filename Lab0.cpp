@@ -25,6 +25,7 @@ int main() {
         "El objetivo de esta semana es contextualizar el paradigma de Orientación a Objetos (OO) en el marco de la Ingeniería de Software, así como comenzar a ver sus conceptos básicos y cómo éstos se implementan en C++."
     );
     conjuntoInformacion.push_back(PrimeraPaginaWeb);
+
     // Crear SegundaPaginaWeb
     PaginaWeb* SegundaPaginaWeb = new PaginaWeb(
         2, 
@@ -68,11 +69,13 @@ int main() {
 
     // d)
 
-    cout << PrimeraPaginaWeb;
-    cout << SegundaPaginaWeb;
-    cout << PrimerChatGPT;
-    cout << SegundoChatGPT;
-    cout << PrimerLibro;
+    cout << "Imprimimos el método toString() de cada objeto.\n\n";
+
+    cout << PrimeraPaginaWeb->toString() << "\n\n";
+    cout << SegundaPaginaWeb->toString() << "\n\n";
+    cout << PrimerChatGPT->toString() << "\n\n";
+    cout << SegundoChatGPT->toString() << "\n\n";
+    cout << PrimerLibro->toString() << "\n\n";
 
     // e)
 
@@ -103,33 +106,53 @@ int main() {
     set<string> infoPrimerEstudiante = PrimerEstudiante->listarInfo(DTFecha(8,3,2024));
     set<string> infoSegundoEstudiante = SegundoEstudiante->listarInfo(DTFecha(8,3,2024));
 
+    cout << "Imprimimos la lista de información de cada estudiante.\n\n";
+
     imprimirListaDesde(infoPrimerEstudiante);
     imprimirListaDesde(infoSegundoEstudiante);
 
     // h)
 
-    vector<DTInfoEstudiante*> resultado;
+    string palabraBuscar = "polimorfismo";
 
-    for (long long unsigned int i = 0; i < conjuntoInformacion.size(); i++)
-    {
-        
-        string aRevisar = conjuntoInformacion[i]->toString();
+    vector<DTInfoEstudiante> resultado = buscarEnInfo(palabraBuscar, conjuntoInformacion); // preguntar a profe si esta bien mandar solo conjuntoInformacion
 
-        if ( aRevisar.find("polimorfismo") != string::npos ){
-
-            for (long long unsigned int j = 0; j < conjuntoInformacion[i]->getEstudiantes().size(); j++)
-            {
-                resultado.push_back( new DTInfoEstudiante(conjuntoInformacion[i]->getEstudiantes()[j]->getCI(), conjuntoInformacion[i]->getEstudiantes()[j]->getNombre(), conjuntoInformacion[i]->getIdentificador()) ); 
-            }
-                        
-        }
-
-    }
+    cout << "Imprimimos los pares de informacion y estudiante encontrados al buscar: " + palabraBuscar + ".\n\n";
 
     for (long long unsigned int i = 0; i < resultado.size(); i++)
     {
-        cout << resultado[i] << "\n";
+        cout << resultado[i] << "\n"; // Esto no se pasa a una funcion por separado, asi mostramos que usamos la sobrecarga de <<
     }
+
+    cout << "\n";
+
+    // i)
+
+    // Borramos un objeto de clase Informacion
+
+    eliminarInfo(3, conjuntoInformacion);           // Mantiene el conjunto informacion, lo paso por referencia
+    delete PrimerChatGPT;                           // El destructor ya borra los Links
+    
+    // No debería aparecer la Informacion con id=3 al buscar polimorfismo
+    vector<DTInfoEstudiante> resultadoDespuesDeBorrar = buscarEnInfo("polimorfismo", conjuntoInformacion);
+
+    cout << "Imprimimos los pares despues de borrar la informacion con id=3.\n\n";
+
+    for (long long unsigned int i = 0; i < resultadoDespuesDeBorrar.size(); i++)
+    {
+        cout << resultadoDespuesDeBorrar[i] << "\n"; 
+    }
+
+    cout << "\n";
+
+    // Finalizamos liberando toda la memoria
+
+    delete PrimeraPaginaWeb;
+    delete SegundaPaginaWeb;
+    delete SegundoChatGPT;
+    delete PrimerLibro;
+    delete PrimerEstudiante;
+    delete SegundoEstudiante;
     
     return 0;
 

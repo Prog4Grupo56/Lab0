@@ -3,7 +3,13 @@
 // Constructor
 Informacion::Informacion( int id, DTFecha _fecha ): identificador(id), fecha(_fecha) {}
 // Destructor
-Informacion::~Informacion(){}
+Informacion::~Informacion(){
+    for (long long unsigned int i = 0; i < listaEstudiante.size(); i++)
+    {
+        listaEstudiante[i]->eliminarInformacion(identificador);
+    }
+    
+}
 // Getters
 int Informacion::getIdentificador(){ return identificador; }
 DTFecha Informacion::getFecha(){ return fecha; }

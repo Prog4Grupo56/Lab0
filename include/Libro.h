@@ -18,8 +18,6 @@ public:
     string getResumen();
     // Metodos
     string toString();
-    // Sobrecarga de <<
-    friend ostream& operator<<(ostream& os, Libro* libro);
 };
 
 #endif

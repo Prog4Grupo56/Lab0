@@ -14,8 +14,3 @@ void ChatGPT::setRespuesta (string _respuesta){ respuesta = _respuesta; }
 string ChatGPT::toString(){
     return to_string(getIdentificador()) + ", " + getStringFecha() + ", " + pregunta + ", " + respuesta;
 };
-// Sobrecarga de <<
-ostream& operator<<(ostream& os, ChatGPT* chat) {
-    os << chat->toString() + "\n" + "\n"; // Eliminamos la flecha adicional
-    return os;
-}

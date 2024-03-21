@@ -17,8 +17,3 @@ void PaginaWeb::setTextoDeInteres(string _textoDeInteres){ textoDeInteres=_texto
 string PaginaWeb::toString(){
     return to_string(getIdentificador()) + ", " + getStringFecha() + ", " + getTitulo() + ", " + getUrl() + ", " + getTextoDeInteres();
 }
-// Sobrecarga de <<
-ostream& operator<<(ostream& os, PaginaWeb* paginaWeb) {
-    os << paginaWeb->toString() + "\n" + "\n";
-    return os;
-}

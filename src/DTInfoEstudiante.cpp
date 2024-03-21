@@ -19,8 +19,8 @@ string DTInfoEstudiante :: getNombre() {return NombreEst;}
 int DTInfoEstudiante :: getCI() {return  CI;}
 int DTInfoEstudiante :: getidInfo() {return  idInfo;}
 
-ostream& operator<<(ostream& os, DTInfoEstudiante* est){
-    os << (to_string(est->CI) + ", " + est->NombreEst + ", " + to_string(est->idInfo));
+ostream& operator<<(ostream& os, DTInfoEstudiante est){
+    os << (to_string(est.getCI())+ ", " + est.getNombre() + ", " + to_string(est.getidInfo()));
     return os;
 }
 

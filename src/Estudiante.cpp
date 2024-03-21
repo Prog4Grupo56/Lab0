@@ -33,6 +33,17 @@ set<string> Estudiante::listarInfo(DTFecha desde){
     return resultado;
 };
 
+void Estudiante::eliminarInformacion(int identificador){
+    for (long long unsigned int i = 0; i < listaInformacion.size(); i++)
+    {
+        if ( listaInformacion[i]->getIdentificador() == identificador ){
+            listaInformacion.erase(listaInformacion.begin() +i);
+        }
+    }
+    
+    
+}
+
 // Sobrecarga de <<
 ostream& operator<<(ostream& os, Estudiante* estudiante) {
     os << estudiante->toString(); // Eliminamos la flecha adicional
