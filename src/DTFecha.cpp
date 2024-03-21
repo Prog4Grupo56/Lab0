@@ -18,6 +18,6 @@ string DTFecha::toString(){
     return to_string(dia) + "/" + to_string(mes) + "/" + to_string(ano);
 }
 
-bool operator<(DTFecha f1, DTFecha f2){
+bool operator<=(DTFecha f1, DTFecha f2){
     return (f1.ano<f2.ano || (f1.ano==f2.ano && f1.mes<f2.mes) || (f1.ano==f2.ano && f1.mes==f2.mes && f1.dia<f2.dia));
 }

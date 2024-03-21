@@ -5,13 +5,14 @@
 #include "include/Libro.h"
 #include "include/PaginaWeb.h"
 #include "include/DTInfoEstudiante.h"
+#include "include/Funciones.h"
 
 int main() {
     
     // Inicio del Main
 
-    vector<Informacion*> conjuntoInformacion = {};
-    vector<Estudiante*> conjuntoEstudiante = {};
+    vector<Informacion*> conjuntoInformacion ;
+    vector<Estudiante*> conjuntoEstudiante ;
 
     // a) 
     
@@ -99,12 +100,16 @@ int main() {
 
     // g)
 
-    PrimerEstudiante->listarInfo("8/3/2024");
-    SegundoEstudiante->listarInfo("8/3/2024"); // Cambiar a que imprima el set aca en el main en vez de imprimir en Estudiante.cpp
+    DTFecha _desde = DTFecha(8,13,2024);
+    set<string> infoPrimerEstudiante = PrimerEstudiante->listarInfo(_desde);
+    set<string> infoSegundoEstudiante = SegundoEstudiante->listarInfo(_desde); //Cambiar a que imprima el set aca en el main en vez de imprimir en Estudiante.cpp
+
+    imprimirListaDesde(infoPrimerEstudiante);
+    imprimirListaDesde(infoSegundoEstudiante);
 
     // h)
 
-    vector<DTInfoEstudiante*> resultado = {};
+    vector<DTInfoEstudiante*> resultado;
 
     for (long long unsigned int i = 0; i < conjuntoInformacion.size(); i++)
     {

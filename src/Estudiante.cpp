@@ -18,23 +18,14 @@ void Estudiante::setInfo(Informacion* info){ listaInformacion.push_back(info); }
 string Estudiante::toString(){
     return nombre + ", " + to_string(CI) + ", " + email;  
 }
-set<string> Estudiante::listarInfo(string desde){
 
-    int pos1 = desde.find('/');
-    int pos2 = desde.find('/', pos1 + 1);
-
-    int dia = stoi(desde.substr(0, pos1));
-    int mes = stoi(desde.substr(pos1 + 1, pos2 - pos1 - 1));
-    int ano = stoi(desde.substr(pos2 + 1));
-
-    DTFecha fechaAux = DTFecha(dia,mes,ano);
+set<string> Estudiante::listarInfo(DTFecha desde){
 
     set<string> resultado;
 
     for (long long unsigned int i = 0; i < listaInformacion.size(); i++)
     {
-        if (fechaAux < listaInformacion[i]->getFecha()){
-            cout << listaInformacion[i]->toString() + "\n\n";
+        if (desde <= listaInformacion[i]->getFecha()){
             resultado.insert(listaInformacion[i]->toString());
         }
     }
@@ -42,6 +33,7 @@ set<string> Estudiante::listarInfo(string desde){
 
     return resultado;
 };
+
 // Sobrecarga de <<
 ostream& operator<<(ostream& os, Estudiante* estudiante) {
     os << estudiante->toString(); // Eliminamos la flecha adicional
