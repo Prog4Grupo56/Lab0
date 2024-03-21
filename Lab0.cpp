@@ -85,18 +85,26 @@ int main() {
     // f)
 
     PrimerEstudiante->setInfo(PrimeraPaginaWeb);
-    PrimerEstudiante->setInfo(SegundaPaginaWeb);
+    PrimerEstudiante->setInfo(SegundaPaginaWeb); 
     PrimerEstudiante->setInfo(PrimerChatGPT);
     SegundoEstudiante->setInfo(PrimerChatGPT);
     SegundoEstudiante->setInfo(SegundoChatGPT);
     SegundoEstudiante->setInfo(PrimerLibro);
+    PrimeraPaginaWeb->setEstudiante(PrimerEstudiante);
+    SegundaPaginaWeb->setEstudiante(PrimerEstudiante);
+    PrimerChatGPT->setEstudiante(PrimerEstudiante);
+    PrimerChatGPT->setEstudiante(SegundoEstudiante);
+    SegundoChatGPT->setEstudiante(SegundoEstudiante);
+    PrimerLibro->setEstudiante(SegundoEstudiante);
 
     // g)
 
     PrimerEstudiante->listarInfo("8/3/2024");
-    SegundoEstudiante->listarInfo("8/3/2024");
+    SegundoEstudiante->listarInfo("8/3/2024"); // Cambiar a que imprima el set aca en el main en vez de imprimir en Estudiante.cpp
 
     // h)
+
+    vector<DTInfoEstudiante*> resultado = {};
 
     for (long long unsigned int i = 0; i < conjuntoInformacion.size(); i++)
     {
@@ -104,12 +112,23 @@ int main() {
         string aRevisar = conjuntoInformacion[i]->toString();
 
         if ( aRevisar.find("polimorfismo") != string::npos ){
-            cout << conjuntoInformacion[i]->toString() + "\n\n";
+
+            // cout << conjuntoInformacion[i]->toString() + "\n\n";
+
+            for (long long unsigned int j = 0; j < conjuntoInformacion[i]->getEstudiantes().size(); j++)
+            {
+                resultado.push_back( new DTInfoEstudiante(conjuntoInformacion[i]->getEstudiantes()[j]->getCI(), conjuntoInformacion[i]->getEstudiantes()[j]->getNombre(), conjuntoInformacion[i]->getIdentificador()) ); 
+            }
+                        
         }
 
     }
-    
 
+    for (long long unsigned int i = 0; i < resultado.size(); i++)
+    {
+        cout << resultado[i] << "\n";
+    }
+    
     return 0;
 
 }
