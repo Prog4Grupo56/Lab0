@@ -30,7 +30,6 @@ set<string> Estudiante::listarInfo(DTFecha desde){
         }
     }
     
-
     return resultado;
 };
 

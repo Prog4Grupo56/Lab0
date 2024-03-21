@@ -100,9 +100,8 @@ int main() {
 
     // g)
 
-    DTFecha _desde = DTFecha(8,13,2024);
-    set<string> infoPrimerEstudiante = PrimerEstudiante->listarInfo(_desde);
-    set<string> infoSegundoEstudiante = SegundoEstudiante->listarInfo(_desde); //Cambiar a que imprima el set aca en el main en vez de imprimir en Estudiante.cpp
+    set<string> infoPrimerEstudiante = PrimerEstudiante->listarInfo(DTFecha(8,3,2024));
+    set<string> infoSegundoEstudiante = SegundoEstudiante->listarInfo(DTFecha(8,3,2024));
 
     imprimirListaDesde(infoPrimerEstudiante);
     imprimirListaDesde(infoSegundoEstudiante);
@@ -117,8 +116,6 @@ int main() {
         string aRevisar = conjuntoInformacion[i]->toString();
 
         if ( aRevisar.find("polimorfismo") != string::npos ){
-
-            // cout << conjuntoInformacion[i]->toString() + "\n\n";
 
             for (long long unsigned int j = 0; j < conjuntoInformacion[i]->getEstudiantes().size(); j++)
             {
