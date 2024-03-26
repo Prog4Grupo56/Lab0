@@ -13,17 +13,16 @@ string Libro::toString() {
     string result = to_string(getIdentificador()) + ", ";
     result += getStringFecha() + ", ";
     result += titulo + ", ";
-    auto it = autores.begin();
-    while (it != autores.end()) {
+    for (set<string>::const_iterator it = autores.begin(); it != autores.end(); ++it) {
         result += *it;
-        if (next(it) != autores.end())
+        if (it != prev(autores.end()))
             result += ", ";
-        ++it;
     }
     result += ", ";
     result += resumen;
     return result;
 }
+
 
 
 
