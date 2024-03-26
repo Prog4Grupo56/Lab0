@@ -1,27 +1,28 @@
 #include "../include/Libro.h"
 
 // Constructor
-Libro::Libro(int id, DTFecha fecha, string titulo_, vector<string> autores_, string resumen_) : Informacion(id, fecha), titulo(titulo_), autores(autores_), resumen(resumen_) {}
+Libro::Libro(int id, DTFecha fecha, string titulo_, set<string> autores_, string resumen_) : Informacion(id, fecha), titulo(titulo_), autores(autores_), resumen(resumen_) {}
 // Destructor
 Libro::~Libro(){}
 // Getters
 string Libro::getTitulo(){ return titulo; }
-vector<string> Libro::getAutores(){ return autores; }
+set<string> Libro::getAutores(){ return autores; }
 string Libro::getResumen(){ return resumen; }
 // Metodos
 string Libro::toString() {
     string result = to_string(getIdentificador()) + ", ";
     result += getStringFecha() + ", ";
     result += titulo + ", ";
-    result += "Autores: ";
-    for (size_t i = 0; i < autores.size(); ++i) {
-        result += autores[i];
-        if (i != autores.size() - 1)
+    for (set<string>::const_iterator it = autores.begin(); it != autores.end(); ++it) {
+        result += *it;
+        if (it != prev(autores.end()))
             result += ", ";
     }
     result += ", ";
     result += resumen;
     return result;
 }
+
+
 
 

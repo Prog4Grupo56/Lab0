@@ -62,7 +62,7 @@ int main() {
         5,
         DTFecha(15,3,2024),
         "Applying UML and Patterns: An Introduction to Object-Oriented Analysis and Design and Iterative Development",
-        {"Craig", "Larman"},
+        {"Craig Larman"},
         "Applying UML and Patterns is the world’s #1 business and college introduction to “thinking in objects”―and using that insight in real-world objectoriented analysis and design. Building on two widely acclaimed previous editions, Craig Larman has updated this book to fully reflect the new UML 2 standard, to help you master the art of object design, and to promote high-impact, iterative, and skillful agile modeling practices."
     );
     conjuntoInformacion.push_back(PrimerLibro);
